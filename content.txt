@@ -19,7 +19,7 @@ Git GitHub :  **(head) *(subhead or diff topic)
  *git add  filename = now new file move to staging area 
 *git add  filename1 filename2 = now new files moves to staging area 
 *git add . = all file started tracking 
-*git commit -m “message” = all file saved or commits
+*git commit -m “message” = all file saved or commits do this after edits anything one time 
 *modify= write something in file it get modified then git add(changes tracked in file) then git commit 
 *git log= show the history of commits and commit message 
 *git log --oneline= short form mai history of committed message
