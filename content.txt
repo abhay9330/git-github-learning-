@@ -1,1 +1,133 @@
 Git GitHub :  **(head) *(subhead or diff topic)
+Git GitHub :  **(head) *(subhead or diff topic)
+ ** git= git is a distributed version control system  means u can use commands to save codes in locals(laptop files or folder) without copy paste and check its history 
+* Git —version = to check git is install or not if yes then git version 2.55.0like 
+*git config --global user.name "Aapka Naam”(your github username)
+ *git config --global user.email "aapka@email.com”( your GitHub email)
+
+** three stages of git = 1. working directory 2. Staging area 3. Repository 
+ * working directory=  Where we are doing codes inside folder in file so working directory is folder and git is not tracking this folder
+*staging area= now git is tracking( ex changes ) the working directory , all
+*repository = when the folder is saved   then folder is repo  and repo(name of repo ) is local folder of projects of projects and inside this folder files is part of repo
+
+**basic commands:
+*pwd=   it tells present folder or working directory
+*git init = git stated tracking your present W.D or folder
+*ls ‎ = list out all files and folders of present W.D but  not showing items of subfolder 
+*ls -a‎ = -a is flag and its show hidden folder also ex .git folder ( this folder is tracking git changes and contain   all Git data, including commits, branches, history, configuration, and tracking information.)
+*git status= what git is tracking in your present directory and show status of files ex deleted  , tracked  , untracked .
+ *git add  filename = now new file move to staging area 
+*git add  filename1 filename2 = now new files moves to staging area 
+*git add . = all file started tracking 
+*git commit -m “message” = all file saved or commits
+*modify= write something in file it get modified then git add(changes tracked in file) then git commit 
+*git log= show the history of commits and commit message 
+*git log --oneline= short form mai history of committed message
+*git diff = tell exactly changes in files
+*cd  foldername = for going in directory or folder 
+*mkdir foldername = for creating folder or directory
+*cd .. = for going one level down on folder 
+*touch filename= for creating new file but this is initially untracked  
+*rm -rf foldername. =delete folder and  and all about that folder forcefully 
+*rm -rf */‎ = delete all folder inside present W.D 
+*rm -f * ‎ =  delete all files in w.d
+*rm -rf *.* ‎ =  delete all files and folder which include . In name ex Abhay.txt
+*git rm --cached filename = tracked file will be started untracked 
+*git restore --staged filename = to remove file from stagging area
+*cat filename = list out all the content in the file
+
+
+** vs code writing ways:
+*echo "Pehli line" > hello.txt = created file in vs and text writing Pelli line 
+*echo "Doosri line" >> hello.txt= seconds line in same file so used >>
+*cat > filename = press enter then write your 1st line then enter write 2nd line … at last control+ d
+*cat >> filename= press enter then write your 1st line then enter write 2nd line … at last control+ d It will add all item in the ending of file
+
+
+**git ignore = make new  file git ignore then write file name  in this which u not wanted to tracked by Git that file will not shown in git status and git does not track empty folder 
+**.gitkeep= .gitkeep folder is tracked but this folder is empty
+
+
+**git reset=  1. soft reset(repo>stage>unstage>remove.
+					2. mix reset (repo>unstage>remove.
+					3. hard reset (repo>remove)
+1. *git reset —soft HEAD~1= second commit remove from repo and comes to staging area
+1 .*git restore —staged filename = now file goes to stage to in stage
+1. *git restore filename =. File unstagging area se remove.   
+  
+2.*git reset head~1= file directly unstage 
+2.*git restore filename =. File unstagging area se remove.  
+
+=>Removing file mean commit remove , Git mein commit ka exact matlab hai: project ki selected files ka ek saved snapshot banana, jisme Git badlavon ko record karta hai. Har commit ka apna ID aur message hota hai, taaki baad mein pata chale kya badla tha aur zaroorat par us version par wapas ja sako.
+
+
+3. *Git reset —hard HEAD~1 = file goes from repo to remove means commit remove also  
+ 
+**git revert commit id = commit id by git log —oneline  and it will undo the changes of commit of that id 
+
+**git branch= it will list out all the branches  and *branch will be your present branch  and branch created when u commit the file or insert it into repo and head will point latest commit of the main branch
+*git branch branch name = new branch will be created of branch name
+*git switch branch name = u will switch to different branch then Crete file write text in this and then check it by git log —oneline and new branch have same file as previous one was having  because new branch is exact clone of his parent  
+*git checkout -b branchname = this will create new branch switched to it at a same time
+*git checkout -c branchname = this will create new branch switched to it at a same time
+*git branch -d branch name =so that branch will got deleted  and u can’t deleted branch in which u are present 
+*git branch -d branchname = it will delete branch but if this branch is not clone of his parent branch
+*git merge branchname= now 2 branch will merge both have same changes and files and now delete any one is possible if you are merging a into b the first go in b then merge it 
+
+
+**git merge = 4 types
+*git log —graph -all or *git log —graph --oneline --all  = show that branches in graph or how many created by graph 
+*git merge branchname =   its an fast forwarding merge create main branch and main2 branch then do changes commits in main2 then after changes merge it with main so main will receive same changes also now head point main and feature in diff area 
+*git merge branchname -m “message"= 3-way merge combines changes from two branches using their common ancestor. “Using their common ancestor” means using the shared earlier commit from which both branches started.
+ *git merge --squash branchname =  squash merge same as fast forwarding but here no show  commits(before merging changes commits btw 2 branch ) of 2 branch after merging  only show latest commit of merge time u can check it by git log —oneline or git status middle one show only stages form not commits
+*git merge all branch name by space between then -m “messsage"= octupes merging means merging three or more branches into one branch at the same time.    
+
+**merge conflict= 2 diff commits in same line in 2 branch at same level 2 branch should be so git confuse which to keep because after merge changes same and it should be one  1 branch commit a and second branch commit b so here 2nd branch has both commit because in creating second one 1st one latest commit was st point of 2nd one  and 1st one has one commit so for this commit 1 more in 1st branch  so merge conflict come 
+
+
+**GitHub= Github is a website where u can store your codes (cloud storage means u save only in internet not in memory) and to collaborate with peoples for projects. Saved changes in cloud its called remote repository
+
+*now create a repo in GitHub and in vs code add readmi files by git commands and commit it 
+*git branch -M branch = it will change branch name to main if its name is master 
+*git remote add origin then repo link from GitHub =this wil connect remote (GitHub) to local( laptops or folders in vs code )
+*git remote -v = for checking from which origin u are connected 
+*git remote remove origin= now no connection origin will be removed 
+
+*https or ssh = if you are connecting with ssh(secure shell) then its secure your remote repo and 2nd person can’t change inside this without permission or in https it will every time pasword and username whenever going to push in GitHub and with ssh set key by going in GitHub setting then sshkeys click on blue link connect to github…  then in new tab will open click on  generate a new ssh key and then there will be some steps of codes do it in terminals then after doing 1st  code step there will be generating public/private key in terminals then enter 2 or three times three will we key which is generated now go in new  tab and go back  then select option adding a new ssh… below generate a new ssh key then copy first line of code not $and  paste in it terminal and this will copy your public key now in GitHub click on setting then shs keys and paste copied one into key section and give title 8 may and after 30 days this key will expire u will get notified by email . Click on ssh key now it set 
+
+*git push origin  branch name   = it  will push committed ones  to the branch in GitHub account into your repository here local main content will go in remote main  add it same way by https and for pushing new branch write branch name in place of main 
+
+*I have secured my repo with ssh so no user can push by cloning my repo  
+But he is forking on my repo from his acount so in his account my repo cloned and he in his account copy ssh and in vs code run 
+*git clone linkof 2nd peroson sshfrom forked repo= cloned now do changes here like new file or branch then 
+*git push branch name = now new branch pushed now changes pushed in forked but he will create pull request from forked repo  and write a message which done in changes  then create pul reuquest and I will receive this request in my GitHub and I can see changes and  merge it if I am merging it by writing a message then merged so there will be Changes In my remote repo .
+but in local I cannot see that change or commit so
+*git fetch branch name  = so new changes will be fetch in local to see
+*git merge branchname = saved merge in my branch 
+*git log Head..origin/main = changes one will be seen here  
+*git  log = all history show of commits merge 
+*git pull branchname = fecth plus merge at same time
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
