@@ -1,5 +1,4 @@
 Git GitHub :  **(head) *(subhead or diff topic)
-Git GitHub :  **(head) *(subhead or diff topic)
  ** git= git is a distributed version control system  means u can use commands to save codes in locals(laptop files or folder) without copy paste and check its history 
 * Git —version = to check git is install or not if yes then git version 2.55.0like 
 *git config --global user.name "Aapka Naam”(your github username)
@@ -12,14 +11,14 @@ Git GitHub :  **(head) *(subhead or diff topic)
 
 **basic commands:
 *pwd=   it tells present folder or working directory
-*git init = git stated tracking your present W.D or folder
+*git init = git stated tracking your present W.D or folder do it once in st only 
 *ls ‎ = list out all files and folders of present W.D but  not showing items of subfolder 
 *ls -a‎ = -a is flag and its show hidden folder also ex .git folder ( this folder is tracking git changes and contain   all Git data, including commits, branches, history, configuration, and tracking information.)
 *git status= what git is tracking in your present directory and show status of files ex deleted  , tracked  , untracked .
  *git add  filename = now new file move to staging area 
 *git add  filename1 filename2 = now new files moves to staging area 
 *git add . = all file started tracking 
-*git commit -m “message” = all file saved or commits do this after edits anything one time 
+*git commit -m “message” = all file saved or commits
 *modify= write something in file it get modified then git add(changes tracked in file) then git commit 
 *git log= show the history of commits and commit message 
 *git log --oneline= short form mai history of committed message
@@ -38,8 +37,9 @@ Git GitHub :  **(head) *(subhead or diff topic)
 
 
 ** vs code writing ways:
-*echo "Pehli line" > hello.txt = created file in vs and text writing Pelli line 
-*echo "Doosri line" >> hello.txt= seconds line in same file so used >>
+*echo "Pehli line" > hello.txt = created file in vs and if there is anywhere previouly the it will remove that and write peril line in place of that and for readme file README.MD
+*echo "Doosri line" >> hello.txt= seconds line in same file so used >> if previously
+Something the this will continue after that from next line 
 *cat > filename = press enter then write your 1st line then enter write 2nd line … at last control+ d
 *cat >> filename= press enter then write your 1st line then enter write 2nd line … at last control+ d It will add all item in the ending of file
 
@@ -51,7 +51,7 @@ Git GitHub :  **(head) *(subhead or diff topic)
 **git reset=  1. soft reset(repo>stage>unstage>remove.
 					2. mix reset (repo>unstage>remove.
 					3. hard reset (repo>remove)
-1. *git reset —soft HEAD~1= second commit remove from repo and comes to staging area
+1. *git reset —soft HEAD~1= second commit remove from repo and comes to staging area I
 1 .*git restore —staged filename = now file goes to stage to in stage
 1. *git restore filename =. File unstagging area se remove.   
   
@@ -62,6 +62,7 @@ Git GitHub :  **(head) *(subhead or diff topic)
 
 
 3. *Git reset —hard HEAD~1 = file goes from repo to remove means commit remove also  
+3.*git update-ref -d HEAD = latest commit remove 
  
 **git revert commit id = commit id by git log —oneline  and it will undo the changes of commit of that id 
 
@@ -90,13 +91,17 @@ Git GitHub :  **(head) *(subhead or diff topic)
 *now create a repo in GitHub and in vs code add readmi files by git commands and commit it 
 *git branch -M branch = it will change branch name to main if its name is master 
 *git remote add origin then repo link from GitHub =this wil connect remote (GitHub) to local( laptops or folders in vs code )
+*git remote set-url origin link = this will replace previous set link 
 *git remote -v = for checking from which origin u are connected 
 *git remote remove origin= now no connection origin will be removed 
 
-*https or ssh = if you are connecting with ssh(secure shell) then its secure your remote repo and 2nd person can’t change inside this without permission or in https it will every time pasword and username whenever going to push in GitHub and with ssh set key by going in GitHub setting then sshkeys click on blue link connect to github…  then in new tab will open click on  generate a new ssh key and then there will be some steps of codes do it in terminals then after doing 1st  code step there will be generating public/private key in terminals then enter 2 or three times three will we key which is generated now go in new  tab and go back  then select option adding a new ssh… below generate a new ssh key then copy first line of code not $and  paste in it terminal and this will copy your public key now in GitHub click on setting then shs keys and paste copied one into key section and give title 8 may and after 30 days this key will expire u will get notified by email . Click on ssh key now it set 
+==>>remove all time origin link whenever you are opening new folder for pushing
+
+* ssh = if you are connecting with ssh(secure shell) then its secure your remote repo and 2nd person can’t change inside this without permission or in https it will every time pasword and username whenever going to push in GitHub and with ssh set key by going in GitHub setting then sshkeys click on blue link connect to github…  then in new tab will open click on  generate a new ssh key and then there will be some steps of codes do it in terminals then after doing 1st  code step there will be generating public/private key in terminals then enter 2 or three times three will we key which is generated now go in new  tab and go back  then select option adding a new ssh… below generate a new ssh key then copy first line of code not $and  paste in it terminal and this will copy your public key now in GitHub click on setting then shs keys and paste copied one into key section and give title 8 may and after 30 days this key will expire u will get notified by email . Click on ssh key now it set 
+*http= if you are connecting via https and pushing then no because remote didn’t give the permission because your GitHub authenticate with olds git username and email 
 
 *git push origin  branch name   = it  will push committed ones  to the branch in GitHub account into your repository here local main content will go in remote main  add it same way by https and for pushing new branch write branch name in place of main 
-
+*git push -u origin branch name = here -u means git learned that u have to push code from main local to remote local
 *I have secured my repo with ssh so no user can push by cloning my repo  
 But he is forking on my repo from his acount so in his account my repo cloned and he in his account copy ssh and in vs code run 
 *git clone linkof 2nd peroson sshfrom forked repo= cloned now do changes here like new file or branch then 
@@ -107,6 +112,44 @@ but in local I cannot see that change or commit so
 *git log Head..origin/main = changes one will be seen here  
 *git  log = all history show of commits merge 
 *git pull branchname = fecth plus merge at same time
+
+
+
+
+**normal ways to push code
+—case 1 = fresh new repository you are creating and push codes files 
+*create repo from GitHub 
+cd my-project
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/tumhara-username/my-project.git
+git push  origin main
+*now next time in same repo 
+git add .
+git commit -m "naya change"
+git push
+
+*pahle 2nd folder ka file 
+git status
+git add folder2/notes.txt
+git commit -m "folder2 mein notes.txt add ki"
+git push
+
+*third folder ka file
+git status
+git add folder3/todo.txt
+git commit -m "folder3 mein todo.txt add ki"
+git push
+
+—case 2 =there is existing pre repo in GitHub and u have folder also and folder inside folder(subfolder) also and subfolder contains files and u have to push that files 
+*git clone https://github.com/aapka-username/project-abc.git
+*Cd folder name
+*git add .
+*git commit -m "code add kiya"
+*git push
+
 
 
 
